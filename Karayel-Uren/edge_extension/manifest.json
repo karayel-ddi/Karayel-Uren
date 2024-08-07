@@ -1,0 +1,27 @@
+{
+    "manifest_version": 3,
+    "name": "X.com Tweet Scraper",
+    "version": "1.0",
+    "description": "X.com sitesindeki tweetlerin metinlerini kazıyacak bir uzantı",
+    "permissions": [
+        "activeTab",
+        "scripting"
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": {}
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "*://*.twitter.com/*"
+            ],
+            "js": [
+                "content.js"
+            ]
+        }
+    ]
+}
